@@ -1,13 +1,10 @@
-class Hello {
-	private message: string;
-	constructor(message: string) {
-		this.message = message;
-	}
-	sayHi(): void {
-		console.log(this.message);
-	}
-}
+import { TYPES } from './types';
+import { Container } from 'inversify';
+import 'reflect-metadata';
+import { Meta } from './metadata';
+import { App } from './app';
 
-const instance = new Hello('how are you');
-
-instance.sayHi();
+const appContainer = new Container();
+appContainer.bind(TYPES.Application).to(App);
+const app = appContainer.get<App>(TYPES.Application);
+app.init();
