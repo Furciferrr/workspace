@@ -38,7 +38,6 @@ export class App {
 			{ name: 'Evgeny', isReady: false, age: 18 },
 			{ name: 'Petr', isReady: true, age: 21 },
 			{ name: 'Olga', isReady: true, age: 35 },
-			{ name: 'Semen', isReady: false, age: 38 },
 		];
 	}
 	useMiddleWare(): void {
